@@ -1,0 +1,5 @@
+ng generate component animaux                       #creer un composant
+ng generate class Animaux                           #creer une classe
+ng generate service                                 #creer un servce
+ng generate directive                                 #creer une directive
+npm install @ng-bootstrap/ng-bootstrap@next
