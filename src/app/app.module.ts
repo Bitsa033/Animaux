@@ -5,25 +5,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AnimauxComponent } from './animaux/animaux.component';
-import { InsectesComponent } from './insectes/insectes.component';
 import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EleveursComponent } from './eleveurs/eleveurs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimauxComponent,
-    InsectesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EleveursComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: 'animaux-liste', component: AnimauxComponent},
-      {path: 'insectes-liste', component: InsectesComponent},
-      {path: '', redirectTo: '/animaux-liste', pathMatch: 'full'},
+      {path: 'animaux', component: AnimauxComponent},
+      {path: 'eleveurs', component: EleveursComponent},
+      {path: '', redirectTo: '/animaux', pathMatch: 'full'},
       {path: '**', component: PageNotFoundComponent}
     ]),
     NgbModule,

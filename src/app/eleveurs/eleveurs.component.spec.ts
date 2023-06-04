@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InsectesComponent } from './insectes.component';
+import { EleveursComponent } from './eleveurs.component';
 
-describe('InsectesComponent', () => {
-  let component: InsectesComponent;
-  let fixture: ComponentFixture<InsectesComponent>;
+describe('EleveursComponent', () => {
+  let component: EleveursComponent;
+  let fixture: ComponentFixture<EleveursComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [InsectesComponent]
+      declarations: [EleveursComponent]
     });
-    fixture = TestBed.createComponent(InsectesComponent);
+    fixture = TestBed.createComponent(EleveursComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
