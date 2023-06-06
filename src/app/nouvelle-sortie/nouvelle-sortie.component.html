@@ -1,40 +1,30 @@
 <div class="row">
     <div class="offset-3 col-md-6" ng-app="">
-        <h1 class="container">Nouvel Animal!</h1>
+        <h1 class="container">Nouvelle Sortie!</h1>
         <form action="" method="post">
             <br>
             <div class="row">
+                <!--col-->
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" placeholder="Race animal Ex: Berger allemand" class="form-control" name="race">
+                        <select type="text"  class="form-control" name="nom">
+                            <option value="">Animal</option>
+                            <option value="">Caroline</option>
+                            <option value="">Flamme</option>
+                            <option value="">Bermude</option>
+                        </select>
                     </div>
                 </div>
                 <!--col-->
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" placeholder="Espèce animal Ex: Chien" class="form-control" name="espece">
-                    </div>
-                </div>
-            </div>
-            <!--row-->
-            <br>
-            <div class="row">
-                <!--col-->
-                <div class="col">
-                    <div class="form-group">
-                        <input type="text" placeholder="Nom animal Ex: Caroline" class="form-control" name="nom">
+                        <input type="text" placeholder="Sexe" class="form-control" name="sexe">
                     </div>
                 </div>
                 <!--col-->
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" placeholder="Sexe animal Ex: Femelle" class="form-control" name="sexe">
-                    </div>
-                </div>
-                <!--col-->
-                <div class="col">
-                    <div class="form-group">
-                        <input type="text" placeholder="Age Ex: 5 Mois" class="form-control" name="age">
+                        <input type="text" placeholder="Age" class="form-control" name="age">
                     </div>
                 </div>
                 <!--col-->
@@ -44,13 +34,13 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" placeholder="Prix d'achat Ex: 10 000" class="form-control" name="achat">
+                        <input type="text" placeholder="Qté de sortie Ex: 20" class="form-control" name="qte-sortie">
                     </div>
                 </div>
                 <!--col-->
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" placeholder="Prix de vente Ex: 12 000" class="form-control" name="vente">
+                        <input type="text" placeholder="Prix unitaire Ex: 12 000" class="form-control" name="prix-vente">
                     </div>
                 </div>
                 <!--col-->
@@ -58,7 +48,7 @@
             <!--row-->
             <br>
             <div class="form-group">
-                <textarea type="text" placeholder="Entrez une brève description sur l'animal" class="form-control" name="description" ></textarea>
+                <textarea type="text" placeholder="Commetaire de sortie" class="form-control" name="commentaire" ></textarea>
             </div>
             <br>
             <div class="row">

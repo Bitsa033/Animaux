@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EleveursComponent } from './eleveurs/eleveurs.component';
 import { AjouterAnimalComponent } from './ajouter-animal/ajouter-animal.component';
 import { AjouterEleveurComponent } from './ajouter-eleveur/ajouter-eleveur.component';
+import { NouvelleSortieComponent } from './nouvelle-sortie/nouvelle-sortie.component';
 
 @NgModule({
   declarations: [
@@ -20,16 +21,18 @@ import { AjouterEleveurComponent } from './ajouter-eleveur/ajouter-eleveur.compo
     EleveursComponent,
     AjouterAnimalComponent,
     AjouterEleveurComponent,
+    NouvelleSortieComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
+      {path: '', redirectTo: 'ajouter-animal', pathMatch: 'full'},
       {path: 'ajouter-animal', component: AjouterAnimalComponent},
       {path: 'animaux', component: AnimauxComponent},
       {path: 'ajouter-eleveur', component: AjouterEleveurComponent},
       {path: 'eleveurs', component: EleveursComponent},
-      {path: '', redirectTo: 'ajouter-animal', pathMatch: 'full'},
+      {path: 'nouvelle-sortie', component: NouvelleSortieComponent},
       {path: '**', component: PageNotFoundComponent}
     ]),
     NgbModule,
