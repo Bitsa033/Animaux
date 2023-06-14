@@ -5,19 +5,41 @@
         <table class="table table-stripped table-bordered">
             <thead>
                 <tr>
-                    <th>Type</th>
-                    <th>Nom de l'animal</th>
-                    <th>Description</th>
-                    <th>Age</th>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Sexe</th>
+                    <th>Qté</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Chien</td>
-                    <td>Nicoderme</td>
-                    <td> Animal trop brutal </td>
-                    <td>1 Mois</td>
+                <tr *ngFor="let item of animaux">
+                    <td>
+                        <ul >
+                            <li class="nav-link">{{item.id}}</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul >
+                            <li class="nav-link">{{item.Nom}}</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul >
+                            <li class="nav-link">{{item.sexe}}</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul >
+                            <li class="nav-link">{{item.qte}}</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <a class="btn btn-info m-2" href="{{item.id}}">Editer</a>
+                        <a class="btn btn-danger" href="{{item.id}}">Supprimer</a>
+                    </td>
                 </tr>
+                
             </tbody>
         </table>
     </div>
