@@ -9,16 +9,25 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./animaux.component.css'],
   // providers:[AnimalService]
 })
-export class AnimauxComponent implements OnInit  {
+export class AnimauxComponent implements OnInit {
   
   animaux:any
 
-  constructor(animals:AnimalService ){
-    this.animaux=animals.animals
+  constructor(private animals:AnimalService ){
+    
   }
 
   ngOnInit(): void {
-    
+    this.getAnimalsData();
+  }
+  
+  getAnimalsData(){
+
+    this.animals.getAnimals().subscribe(data=>{
+      
+      
+      
+    })
     
   }
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Axios } from 'axios';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +8,9 @@ import { Axios } from 'axios';
 
 export class AnimalService {
 
-  readonly api="localhost:8080/api/animals"
-  readonly endpoint="/get/all"
-
+  readonly api_spring="localhost:8080/api/animals/get/all"
+  readonly api_laravel="http://localhost:8000/api/users"
+  
     animals = [
         {id:1,nom:'Grislain',sexe:'Femele',qte:31},
         {id:2,nom:'Raoul',sexe:'Male',qte:55},
@@ -18,12 +19,13 @@ export class AnimalService {
         // {id:5,nom:'Roky',sexe:'Femele',qte:1200},
 
     ]
-  constructor() {
+  constructor(private a:HttpClient) {
     this.animals
-    
     
   }
 
-  
+  getAnimals(){
+    return this.a.get(this.api_laravel)
+  }
 
 }

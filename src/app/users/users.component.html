@@ -1,0 +1,42 @@
+<div class="row">
+    <h2 class="offet-2">Users List</h2>
+    <div class="col-md-9 offset-2">
+        <br>
+        <table class="table table-stripped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of users">
+                    <td>
+                        <ul >
+                            <li class="nav-link">{{item.id}}</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul >
+                            <li class="nav-link">{{item.name}}</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul >
+                            <li class="nav-link">{{item.email}}</li>
+                        </ul>
+                    </td>
+                    
+                    <td>
+                        <a class="btn btn-info m-2" href="{{item.id}}">Editer</a>
+                        <a class="btn btn-danger" href="{{item.id}}">Supprimer</a>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--/row-->

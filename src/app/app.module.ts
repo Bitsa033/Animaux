@@ -10,6 +10,8 @@ import { EleveursComponent } from './eleveurs/eleveurs.component';
 import { AjouterAnimalComponent } from './ajouter-animal/ajouter-animal.component';
 import { AjouterEleveurComponent } from './ajouter-eleveur/ajouter-eleveur.component';
 import { NouvelleSortieComponent } from './nouvelle-sortie/nouvelle-sortie.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,11 @@ import { NouvelleSortieComponent } from './nouvelle-sortie/nouvelle-sortie.compo
     AjouterAnimalComponent,
     AjouterEleveurComponent,
     NouvelleSortieComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '', redirectTo: 'ajouter-animal', pathMatch: 'full'},
@@ -31,6 +35,7 @@ import { NouvelleSortieComponent } from './nouvelle-sortie/nouvelle-sortie.compo
       {path: 'ajouter-eleveur', component: AjouterEleveurComponent},
       {path: 'eleveurs', component: EleveursComponent},
       {path: 'nouvelle-sortie', component: NouvelleSortieComponent},
+      {path: 'users', component: UsersComponent},
       {path: '**', component: PageNotFoundComponent}
     ]),
     NgbModule,
