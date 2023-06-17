@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AnimalService } from '../animal.service';
+import { OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-animaux',
@@ -7,12 +9,22 @@ import { AnimalService } from '../animal.service';
   styleUrls: ['./animaux.component.css'],
   // providers:[AnimalService]
 })
-export class AnimauxComponent {
+export class AnimauxComponent implements OnInit  {
   
   animaux:any
+  an!:object
 
-  constructor(animals:AnimalService ){
+  constructor(private animals:AnimalService ){
     this.animaux=animals.animals
+  }
+
+  ngOnInit(): void {
+    console.log("Ressource is running on this route ...");
+    
+    this.animals.getAll().subscribe((data)=>{
+      this.an = data
+    })
+    
   }
 
   // animaux=[
