@@ -12,6 +12,7 @@ import { AjouterEleveurComponent } from './ajouter-eleveur/ajouter-eleveur.compo
 import { NouvelleSortieComponent } from './nouvelle-sortie/nouvelle-sortie.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './users/users.component';
+import { NgModel } from '@angular/forms';
 
 @NgModule({
   declarations: [

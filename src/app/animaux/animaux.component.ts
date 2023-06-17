@@ -25,7 +25,7 @@ export class AnimauxComponent implements OnInit {
 
     this.animals.getAnimals().subscribe(data=>{
       
-      
+      this.animaux=data
       
     })
     
