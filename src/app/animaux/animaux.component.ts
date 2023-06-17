@@ -12,18 +12,13 @@ import { OnInit } from '@angular/core';
 export class AnimauxComponent implements OnInit  {
   
   animaux:any
-  an!:object
 
-  constructor(private animals:AnimalService ){
+  constructor(animals:AnimalService ){
     this.animaux=animals.animals
   }
 
   ngOnInit(): void {
-    console.log("Ressource is running on this route ...");
     
-    this.animals.getAll().subscribe((data)=>{
-      this.an = data
-    })
     
   }
 

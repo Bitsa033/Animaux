@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import { Axios } from 'axios';
 
 @Injectable({
   providedIn: 'root'
@@ -18,14 +18,12 @@ export class AnimalService {
         // {id:5,nom:'Roky',sexe:'Femele',qte:1200},
 
     ]
-  constructor(private http:HttpClient) {
+  constructor() {
     this.animals
     
     
   }
 
-  getAll(){
-    return this.http.get(this.api+this.endpoint)
-  }
+  
 
 }
