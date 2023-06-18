@@ -11,5 +11,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./ajouter-animal.component.css']
 })
 export class AjouterAnimalComponent {
+
+  submitData(){
+    console.log("Ok");
+    
+  }
   
 }

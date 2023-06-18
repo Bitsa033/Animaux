@@ -1,38 +1,29 @@
 <div class="row">
-    <div class="offset-3 col-md-6" ng-app="">
+    <div class="offset-2 col-md-4" ng-app="">
         <h1 class="container">Nouvel Animal!</h1>
-        <form action="" method="post">
-            <div class="row">
-                <div class="col">
-                    <h4>Nom de race</h4>
-                    <input name="race" id="race" type="text" class="form-control">
-                    <h4>Nom d'espèce</h4>
-                    <input name="espec" id="espece" type="text" class="form-control">
-                    <h4>Nom de l'animal</h4>
-                    <input name="animal" id="animal" type="text" class="form-control">
-                </div>
-                <div class="col">
-                    <h4>Sexe</h4>
-                    <input name="sexe" id="sexe" type="text" class="form-control">
-                    <h4>Qté en stock</h4>
-                    <input name="qte" id="qte" type="text" class="form-control">
-                    <h4>Qté en alerte</h4>
-                    <input name="qa" id="qa" type="text" class="form-control">
-                </div>
+        <form action="" method="post" autocomplete="off">
+            <br>
+            <div class="form-group">
+                <input type="text" placeholder="Nom" class="form-control" name="nom" id="nom">
             </div>
-            <br><br>
-            <div class="row">
-                <div class="col-md-4 offset-2">
-                    <input type="reset" class="form-control btn btn-danger">
-                </div>
-                <div class="col-md-4">
-                    <input id="btn-submit-animal" type="submit" class="form-control btn btn-success">
-                </div>
+            <br>
+            <div class="form-group">
+                <input type="text" placeholder="Prix" class="form-control" name="prix" id="prix">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="text" placeholder="Qté" class="form-control" name="qte" id="qte">
+            </div>
+            <br>
+            
+            <div class="form-group">
+                <input type="submit" class="form-control btn btn-success" >
             </div>
             <br>
         </form>
     
     </div>
+    <!--/col-->
     
 </div>
 <!--/row-->

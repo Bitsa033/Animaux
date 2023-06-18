@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimalService } from '../animal.service';
+import { UtilsService } from '../utils.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -11,22 +11,22 @@ export class UsersComponent implements OnInit {
 
   users:any[]=[]
 
-  constructor(private utils_service:AnimalService) { }
+  constructor(private utils_service:UtilsService) { }
   
   ngOnInit(): void {
       this.getAllUsers()
   }
 
   getAllUsers(){
-    this.utils_service.getAnimals().subscribe((data:any)=>{
+    this.utils_service.getAllUsers().subscribe((response:any)=>{
       // this.users=[
       //   {id:1,name:'Grislain',email:'yyyy@'},
       //   {id:1,name:'Grislain',email:'t@ooi'},
       //   {id:1,name:'Grislain',email:'bbh@p'}
       // ]
-      console.log(data.data);
+      console.log(response.data);
       
-      this.users=data.data
+      this.users=response.data
       
     })
   }

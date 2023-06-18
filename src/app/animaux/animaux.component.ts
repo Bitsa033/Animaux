@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AnimalService } from '../animal.service';
 import { OnInit } from '@angular/core';
+import { UtilsService } from '../utils.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class AnimauxComponent implements OnInit {
   
   animaux:any
 
-  constructor(private animals:AnimalService ){
+  constructor(private service:UtilsService ){
     
   }
 
@@ -23,9 +23,9 @@ export class AnimauxComponent implements OnInit {
   
   getAnimalsData(){
 
-    this.animals.getAnimals().subscribe(data=>{
+    this.service.getAllAnimals().subscribe((response:any)=>{
       
-      this.animaux=data
+      this.animaux=response.data
       
     })
     

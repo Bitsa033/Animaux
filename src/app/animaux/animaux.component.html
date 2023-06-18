@@ -2,12 +2,13 @@
     
     <div class="col-md-9 offset-2">
         <br>
+        <a routerLink="/ajouter-animal" class="btn btn-primary">Ajouter un Animal <i class="fa fa-edit"></i></a>
         <table class="table table-stripped table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nom</th>
-                    <th>Sexe</th>
+                    <th>Prix</th>
                     <th>Qté</th>
                     <th>Actions</th>
                 </tr>
@@ -21,17 +22,17 @@
                     </td>
                     <td>
                         <ul >
-                            <li class="nav-link">{{item.name}}</li>
+                            <li class="nav-link">{{item.nom}}</li>
                         </ul>
                     </td>
                     <td>
                         <ul >
-                            <li class="nav-link">{{item.id}}</li>
+                            <li class="nav-link">{{item.prix + ' FCFA'}}</li>
                         </ul>
                     </td>
                     <td>
                         <ul >
-                            <li class="nav-link">{{item.id}}</li>
+                            <li class="nav-link">{{item.qte}}</li>
                         </ul>
                     </td>
                     <td>
