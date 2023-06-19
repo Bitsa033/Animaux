@@ -12,7 +12,7 @@ import { AjouterEleveurComponent } from './ajouter-eleveur/ajouter-eleveur.compo
 import { NouvelleSortieComponent } from './nouvelle-sortie/nouvelle-sortie.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './users/users.component';
-import { NgModel } from '@angular/forms';
+import { AjouterUserComponent } from './ajouter-user/ajouter-user.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { NgModel } from '@angular/forms';
     AjouterEleveurComponent,
     NouvelleSortieComponent,
     UsersComponent,
+    AjouterUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +38,8 @@ import { NgModel } from '@angular/forms';
       {path: 'eleveurs', component: EleveursComponent},
       {path: 'nouvelle-sortie', component: NouvelleSortieComponent},
       {path: 'users', component: UsersComponent},
+      {path: 'ajouter-user', component: AjouterUserComponent},
+
       {path: '**', component: PageNotFoundComponent}
     ]),
     NgbModule,

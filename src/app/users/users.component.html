@@ -1,8 +1,9 @@
+<link rel="stylesheet" href="users.component.css">
 <div class="container">
     
     <div class="">
         <br>
-        <a routerLink="/ajouter-user" class="btn btn-primary"><i class="bi-edit"></i>Ajouter un Utilisateur <i class="fa fa-edit"></i></a>
+        <a routerLink="/ajouter-user" class="btn btn-primary"><i class="bi bi-align-middle"></i> Ajouter un Utilisateur <i class="fa fa-edit"></i></a>
         <br><br>
         <h2 *ngIf="!users">Chargement en cours ...</h2>
         <table class="table table-stripped table-bordered">
@@ -33,8 +34,8 @@
                     </td>
                     
                     <td>
-                        <a class="btn btn-info m-2" href="{{item.id}}">Editer</a>
-                        <a class="btn btn-danger" href="{{item.id}}">Supprimer</a>
+                        <a class="btn btn-info m-2" href="{{item.id}}"><i class="bi bi-pencil"></i> Mettre à jour</a>
+                        <a class="btn btn-danger" href="{{item.id}}"><i class="bi bi-bank2"></i> Supprimer</a>
                     </td>
                 </tr>
                 

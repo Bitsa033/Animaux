@@ -1,8 +1,9 @@
+
 <div class="container">
     
     <div class="">
         <br>
-        <a routerLink="/ajouter-animal" class="btn btn-primary">Ajouter un Animal <i class="fa fa-edit"></i></a>
+        <a routerLink="/ajouter-animal" class="btn btn-primary"> <i class="bi bi-align-middle"></i> Ajouter un Animal</a>
         <br><br>
         <h2 *ngIf="!animaux">Chargement en cours ...</h2>
         <table class="table table-stripped table-bordered">
@@ -11,6 +12,7 @@
                     <th>ID</th>
                     <th>Nom</th>
                     <th>Prix</th>
+                    <th>Promo</th>
                     <th>Qté</th>
                     <th>Actions</th>
                 </tr>
@@ -32,14 +34,20 @@
                             <li class="nav-link">{{item.prix + ' FCFA'}}</li>
                         </ul>
                     </td>
+                    <td >
+                        <ul>
+                            <li class="nav-link  inline"><a class="btn btn-info m-2" href="{{item.id}}"><i class="bi bi-heart"></i> </a></li>
+                            <li class="nav-link inline"><a class="btn btn-info m-2" href="{{item.id}}"><i class="bi bi-heart-fill"></i> </a></li>
+                        </ul>
+                    </td>
                     <td>
                         <ul >
                             <li class="nav-link">{{item.qte}}</li>
                         </ul>
                     </td>
                     <td>
-                        <a class="btn btn-info m-2" href="{{item.id}}">Editer</a>
-                        <a class="btn btn-danger" href="{{item.id}}">Supprimer</a>
+                        <a class="btn btn-info m-2" href="{{item.id}}"><i class="bi bi-pencil"></i> Mettre à jour</a>
+                        <a class="btn btn-danger" href="{{item.id}}"><i class="bi bi-bank2"></i> Supprimer</a>
                     </td>
                 </tr>
                 
