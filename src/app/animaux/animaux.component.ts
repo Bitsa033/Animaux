@@ -22,12 +22,12 @@ export class AnimauxComponent implements OnInit {
   }
   
   getAnimalsData(){
+    setTimeout(() => {
+      this.service.getAllAnimals().subscribe((response:any)=>{
+        this.animaux=response.data
+      })
 
-    this.service.getAllAnimals().subscribe((response:any)=>{
-      
-      this.animaux=response.data
-      
-    })
+    }, 1000);
     
   }
 

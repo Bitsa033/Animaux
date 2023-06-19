@@ -10,7 +10,6 @@ export class UtilsService {
   api_users = 'http://localhost:8000/api/users/';
   api_animals = 'http://localhost:8000/api/animals/';
   all_data = 'get';
-  one_data = 'get/{id}'
   add_data='store'
 
 
