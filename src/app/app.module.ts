@@ -13,6 +13,8 @@ import { NouvelleSortieComponent } from './nouvelle-sortie/nouvelle-sortie.compo
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './users/users.component';
 import { AjouterUserComponent } from './ajouter-user/ajouter-user.component';
+import { FormsModule } from '@angular/forms';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,12 @@ import { AjouterUserComponent } from './ajouter-user/ajouter-user.component';
     NouvelleSortieComponent,
     UsersComponent,
     AjouterUserComponent,
+    UpdateUserComponent,
+    
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot([

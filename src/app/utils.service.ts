@@ -9,22 +9,33 @@ export class UtilsService {
 
   api_users = 'http://localhost:8000/api/users/';
   api_animals = 'http://localhost:8000/api/animals/';
-  all_data = 'get';
+
+  get_all_data = 'get';
   add_data='store'
+  update_data='update'
+  delete_data='delete'
 
 
   constructor(private a: HttpClient) {}
 
   getAllUsers() {
-    return this.a.get(this.api_users + this.all_data);
+    return this.a.get(this.api_users + this.get_all_data);
   }
 
-  storeUser() {
-    return this.a.get(this.api_users + this.add_data);
+  storeUser(data:any) {
+    return this.a.post(this.api_users + this.add_data,data);
+  }
+
+  updateUser(data:any){
+    return this.a.put(this.api_users + this.update_data,data)
+  }
+
+  deleteUser(data:any){
+    return this.a.delete(this.api_users + this.delete_data,data)
   }
 
   getAllAnimals() {
-    return this.a.get(this.api_animals + this.all_data);
+    return this.a.get(this.api_animals + this.get_all_data);
   }
 
 }
