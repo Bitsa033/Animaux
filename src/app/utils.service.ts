@@ -10,7 +10,7 @@ export class UtilsService {
   api_users = 'http://localhost:8000/api/users/';
   api_animals = 'http://localhost:8000/api/animals/';
 
-  get_all_data = 'get';
+  get_data = 'get';
   add_data='store'
   update_data='update'
   delete_data='delete'
@@ -19,7 +19,11 @@ export class UtilsService {
   constructor(private a: HttpClient) {}
 
   getAllUsers() {
-    return this.a.get(this.api_users + this.get_all_data);
+    return this.a.get(this.api_users + this.get_data);
+  }
+
+  getOneUser(id:any) {
+    return this.a.get(this.api_users + this.get_data + "/" + id);
   }
 
   storeUser(data:any) {
@@ -35,7 +39,7 @@ export class UtilsService {
   }
 
   getAllAnimals() {
-    return this.a.get(this.api_animals + this.get_all_data);
+    return this.a.get(this.api_animals + this.get_data);
   }
 
 }

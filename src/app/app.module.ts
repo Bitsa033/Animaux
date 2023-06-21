@@ -44,6 +44,8 @@ import { UpdateUserComponent } from './update-user/update-user.component';
       {path: 'nouvelle-sortie', component: NouvelleSortieComponent},
       {path: 'users', component: UsersComponent},
       {path: 'ajouter-user', component: AjouterUserComponent},
+      {path: 'modifier-user/:id', component: UpdateUserComponent},
+      {path: 'supprimer-user/:id', component: UsersComponent},
 
       {path: '**', component: PageNotFoundComponent}
     ]),
