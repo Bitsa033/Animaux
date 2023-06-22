@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../ajouter-user/user';
 import { NgForm } from '@angular/forms';
 import { UtilsService } from '../utils.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-update-user',
@@ -10,29 +11,32 @@ import { UtilsService } from '../utils.service';
 })
 export class UpdateUserComponent implements OnInit {
 
-  user:User = new User()
-  u:any
-  id= 7
+  user = new User()
+  data:any
+  id:any
 
   ngOnInit(): void {
+    this.id= this.idr.snapshot.paramMap.get("id")
     this.getUser()
     
   }
 
-  constructor(private service:UtilsService){}
-
+  constructor(private service:UtilsService,private idr:ActivatedRoute){}
 
   getUser(){
     this.service.getOneUser(this.id).subscribe((response:any)=>{
-      this.u =response.data
-      console.log(response.data);
+    this.data=response.data
       
     })
   }
 
   updateUser(form:NgForm){
-   let  name= form.value.name
-    alert("Update user" + name)
+   let  data= form.value
+    console.log(data);
+    this.service.updateUser(this.id,data).subscribe((res)=>{
+      alert("Mise à jour réussie !")
+      
+    })
   }
 
   deleteUser(){

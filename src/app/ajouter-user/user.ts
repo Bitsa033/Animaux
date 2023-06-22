@@ -1,8 +1,8 @@
 export class User{
-    name:string=""
-    email:string=""
-    password:string=""
-    adresse:string=""
-    contact:string=""
+    name:any
+    email:any
+    password:any
+    adresse:any
+    contact:any
 
 }

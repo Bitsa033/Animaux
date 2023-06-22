@@ -30,8 +30,8 @@ export class UtilsService {
     return this.a.post(this.api_users + this.add_data,data);
   }
 
-  updateUser(data:any){
-    return this.a.put(this.api_users + this.update_data,data)
+  updateUser(id:any,data:any){
+    return this.a.put(this.api_users + this.update_data + "/" + id,data)
   }
 
   deleteUser(data:any){
