@@ -1,18 +1,14 @@
 <div class="row">
     <div class="offset-2 col-md-6" ng-app="">
         <h1 class="container">Modifier l'utilisateur!</h1>
-        <form autocomplete="off" (ngSubmit)="updateUser(registerForm)" #registerForm="ngForm" *ngFor="let i of data">
+        <form autocomplete="off" (ngSubmit)="updateUser(registerForm)" #registerForm="ngForm">
             <br>
             <div class="form-group">
-                <input type="text" class="form-control" name="name" id="name" [(ngModel)]="i.name">
+                <input type="text" class="form-control" name="name" id="name" [(ngModel)]="user.name">
             </div>
             <br>
             <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" [(ngModel)]="i.email">
-            </div>
-            <br>
-            <div class="form-group">
-                <input type="password" placeholder="Mot de passe" class="form-control" name="password" id="password" [(ngModel)]="user.password">
+                <input type="email" class="form-control" name="email" id="email" [(ngModel)]="user.email">
             </div>
             <br>
             <div class="form-group">
@@ -20,7 +16,7 @@
             </div>
             <br>
             <div class="form-group">
-                <input type="submit" class="form-control btn btn-success" value="Modifier">
+                <button type="submit" class="btn btn-success"> Modifier </button>
             </div>
             <br>
         </form>

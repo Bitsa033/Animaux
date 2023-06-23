@@ -12,10 +12,14 @@
                     <th>ID</th>
                     <th>Nom</th>
                     <th>Email</th>
+                    <th>Mot de passe</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
+                <tr *ngIf="users <= 0">
+                    <td colspan="5" class="text-center"> Votre Tableau est vide pour le moment ...</td>
+                </tr>
                 <tr *ngFor="let item of users">
                     <td>
                         <ul >
@@ -32,10 +36,16 @@
                             <li class="nav-link">{{item.email}}</li>
                         </ul>
                     </td>
+
+                    <td>
+                        <ul >
+                            <li class="nav-link">{{item.password}}</li>
+                        </ul>
+                    </td>
                     
                     <td>
                         <a class="btn btn-info m-2" routerLink="/modifier-user/{{item.id}}"><i class="bi bi-pencil"></i> Mettre à jour</a>
-                        <a class="btn btn-danger" routerLink="/supprimer-user/{{item.id}}"><i class="bi bi-bank2"></i> Supprimer</a>
+                        <a (click)="deleteUser(item.id)" class="btn btn-danger"><i class="bi bi-bank2"></i> Supprimer</a>
                     </td>
                 </tr>
                 

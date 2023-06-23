@@ -12,35 +12,35 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateUserComponent implements OnInit {
 
   user = new User()
-  data:any
+
   id:any
 
   ngOnInit(): void {
-    this.id= this.idr.snapshot.paramMap.get("id")
+    this.id= this.activated_route.snapshot.paramMap.get("id")
     this.getUser()
     
   }
 
-  constructor(private service:UtilsService,private idr:ActivatedRoute){}
+  constructor(private service:UtilsService,private activated_route:ActivatedRoute){}
 
   getUser(){
     this.service.getOneUser(this.id).subscribe((response:any)=>{
-    this.data=response.data
-      
+    this.user=response.data
+    
     })
   }
 
   updateUser(form:NgForm){
-   let  data= form.value
-    console.log(data);
-    this.service.updateUser(this.id,data).subscribe((res)=>{
-      alert("Mise à jour réussie !")
+   let  data = form.value
+    this.service.updateUser(this.id,data).subscribe((res:any)=>{
+      console.log(res);
+      
+      let id = res.data.user.id
+      let name = res.data.user.name
+      alert("Mise à jour réussie pour l'utisteur n°"+id + " = " + name)
       
     })
   }
 
-  deleteUser(){
-    alert("Delete empoye")
-  }
 
 }

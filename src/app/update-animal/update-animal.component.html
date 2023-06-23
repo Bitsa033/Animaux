@@ -1,7 +1,7 @@
 <div class="container">
     <div class="col-md-4 offset-3" >
-        <h1 class="container">Nouvel Animal!</h1>
-        <form autocomplete="off" (ngSubmit)="saveAnimal(registerForm)" #registerForm="ngForm">
+        <h1 class="container">Modifier Animal!</h1>
+        <form autocomplete="off" (ngSubmit)="UpdateAnimal(registerForm)" #registerForm="ngForm">
             <br>
             <div class="form-group">
                 <input type="text" placeholder="Nom" class="form-control" name="nom" id="nom" [(ngModel)]="animal.nom">
@@ -17,7 +17,7 @@
             <br>
             
             <div class="form-group">
-                <input type="submit" class="btn btn-success" value="Enregistrer">
+                <input type="submit" class="btn btn-success" value="Modifier">
             </div>
             <br>
         </form>

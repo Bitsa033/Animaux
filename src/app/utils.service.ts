@@ -18,6 +18,10 @@ export class UtilsService {
 
   constructor(private a: HttpClient) {}
 
+  /**
+   *  méthodes pour l'API usersAPI
+   */
+
   getAllUsers() {
     return this.a.get(this.api_users + this.get_data);
   }
@@ -34,12 +38,32 @@ export class UtilsService {
     return this.a.put(this.api_users + this.update_data + "/" + id,data)
   }
 
-  deleteUser(data:any){
-    return this.a.delete(this.api_users + this.delete_data,data)
+  deleteUser(id:any){
+    return this.a.delete(this.api_users + this.delete_data + "/" + id)
   }
+
+  /**
+   *  méthodes pour l'API AnimalsAPI
+   */
 
   getAllAnimals() {
     return this.a.get(this.api_animals + this.get_data);
+  }
+
+  getOneAnimal(id:any) {
+    return this.a.get(this.api_animals + this.get_data + "/" + id);
+  }
+
+  storeAnimal(data:any) {
+    return this.a.post(this.api_animals + this.add_data,data);
+  }
+
+  updateAnimal(id:any,data:any){
+    return this.a.put(this.api_animals + this.update_data + "/" + id,data)
+  }
+
+  deleteAnimal(id:any){
+    return this.a.delete(this.api_animals + this.delete_data + "/" + id)
   }
 
 }

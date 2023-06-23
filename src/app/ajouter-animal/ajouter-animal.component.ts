@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-
-// axios.get("localhost:8000/create-aninal").then((data)=>{
-//   console.log(data);
-  
-// });
+import { Animal } from './animal';
+import { UtilsService } from '../utils.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-ajouter-animal',
@@ -12,8 +10,29 @@ import { Component } from '@angular/core';
 })
 export class AjouterAnimalComponent {
 
-  submitData(){
-    console.log("Ok");
+  animal:Animal = new Animal()
+
+  data={
+    "nom":this.animal.nom,
+    "prix":this.animal.prix,
+    "qte":this.animal.qte
+  }
+
+  constructor(private service:UtilsService){}
+
+  saveAnimal(formData:NgForm){
+    this.data.nom=formData.form.value.nom
+    this.data.prix=formData.form.value.prix
+    this.data.qte=formData.form.value.qte
+    console.log(this.data);
+    
+    this.service.storeAnimal(this.data).subscribe((response:any)=>{
+  
+      console.log(response);
+      
+      alert("Animal enregistré avec sucès !")
+      
+    })
     
   }
   

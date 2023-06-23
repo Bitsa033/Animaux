@@ -27,9 +27,10 @@ export class AjouterUserComponent {
     console.log(this.data);
     
     this.utils_service.storeUser(this.data).subscribe((response:any)=>{
-      
+  
       console.log(response);
-      console.log('submited ...');
+      
+      alert("Utilisateur enregistré avec sucès !")
       
     })
     

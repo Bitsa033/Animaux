@@ -15,6 +15,7 @@ import { UsersComponent } from './users/users.component';
 import { AjouterUserComponent } from './ajouter-user/ajouter-user.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { UpdateAnimalComponent } from './update-animal/update-animal.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     UsersComponent,
     AjouterUserComponent,
     UpdateUserComponent,
+    UpdateAnimalComponent,
     
   ],
   imports: [
@@ -41,11 +43,11 @@ import { UpdateUserComponent } from './update-user/update-user.component';
       {path: 'animaux', component: AnimauxComponent},
       {path: 'ajouter-eleveur', component: AjouterEleveurComponent},
       {path: 'eleveurs', component: EleveursComponent},
-      {path: 'nouvelle-sortie', component: NouvelleSortieComponent},
       {path: 'users', component: UsersComponent},
       {path: 'ajouter-user', component: AjouterUserComponent},
       {path: 'modifier-user/:id', component: UpdateUserComponent},
-      {path: 'supprimer-user/:id', component: UsersComponent},
+      {path: 'modifier-animal/:id', component: UpdateAnimalComponent},
+      {path: 'nouvelle-sortie', component: NouvelleSortieComponent},
 
       {path: '**', component: PageNotFoundComponent}
     ]),
