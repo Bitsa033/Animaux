@@ -6,6 +6,18 @@ table td{
     background-color: cadetblue;
 }
 
-.inline{
-    display: inline-block;
+form{
+    margin-left: 2%;
+}
+
+.del-1{
+    margin-left: 2%;
+}
+
+.edit-1{
+    margin-left: 2%;
+}
+
+.card{
+    margin-top: 2%;
 }

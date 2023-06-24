@@ -12,6 +12,7 @@ import { UtilsService } from '../utils.service';
 export class AnimauxComponent implements OnInit {
   
   animaux:any
+  promotion='off'
 
   constructor(private service:UtilsService ){
     
@@ -38,5 +39,15 @@ export class AnimauxComponent implements OnInit {
       this.getAnimalsData()
       
     })
+  }
+
+  setPromo(){
+    // if (this.promotion=='off') {
+    //   this.promotion = 'on'
+    // }
+    // else if (this.promotion=='on') {
+    //   this.promotion='off'
+    // } 
+
   }
 }
