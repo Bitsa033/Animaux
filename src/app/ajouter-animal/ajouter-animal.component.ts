@@ -11,28 +11,33 @@ import { NgForm } from '@angular/forms';
 export class AjouterAnimalComponent {
 
   animal:Animal = new Animal()
+  erreur:any
+  reussite:any
 
-  data={
-    "nom":this.animal.nom,
-    "prix":this.animal.prix,
-    "qte":this.animal.qte
-  }
+  // data={
+  //   "nom":this.animal.nom,
+  //   "prix":this.animal.prix,
+  //   "qte":this.animal.qte,
+
+  // }
 
   constructor(private service:UtilsService){}
 
   saveAnimal(formData:NgForm){
-    this.data.nom=formData.form.value.nom
-    this.data.prix=formData.form.value.prix
-    this.data.qte=formData.form.value.qte
-    console.log(this.data);
-    
-    this.service.storeAnimal(this.data).subscribe((response:any)=>{
-  
-      console.log(response);
-      
-      alert("Animal enregistré avec sucès !")
-      
-    })
+    let data =formData.value
+    this.service.storeAnimal(data).subscribe((res:any)=>{
+      this.reussite=res.statut
+      setTimeout(() => {
+        this.reussite=""
+      }, 5000);
+      console.log(res);
+    },(err)=>{
+      this.erreur=err.error.message
+      setTimeout(() => {
+        this.erreur=""
+      }, 5000);
+      console.log(err);
+      })
     
   }
   

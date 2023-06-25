@@ -9,28 +9,11 @@
         <div *ngIf="erreur" class="alert alert-danger">
             <i class="bi bi-x-square-fill text-danger"></i> {{erreur}}
         </div>
-        <h3 class="container">Modifier Animal!</h3>
-        <form autocomplete="off" (ngSubmit)="saveAnimal(registerForm)" #registerForm="ngForm">
-            <div class="form-group">
-                Nom
-                <input type="text" placeholder="Nom ex: Chien" class="form-control" name="nom" id="nom" [(ngModel)]="animal.nom">
-            </div>
-            <br>
-            <div class="form-group">
-                Prix
-                <input type="text" placeholder="Prix ex:5500" class="form-control" name="prix" id="prix" [(ngModel)]="animal.prix">
-            </div>
-            <br>
+        <h3 class="container">Retirer une quantite!</h3>
+        <form autocomplete="off" (ngSubmit)="removeQte(registerForm)" #registerForm="ngForm">
             <div class="form-group">
                 Qté
                 <input type="text" placeholder="Qté ex:22" class="form-control" name="qte" id="qte" [(ngModel)]="animal.qte">
-            </div>
-            <br>
-            <div class="form-group">
-                Promotion off
-                <input type="radio" name="promotion" value="off" id="promotion" [(ngModel)]="animal.promotion">
-                Promotion on
-                <input type="radio" name="promotion" value="on" id="promotion" [(ngModel)]="animal.promotion">
             </div>
             <br>
             

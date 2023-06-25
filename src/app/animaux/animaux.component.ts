@@ -41,13 +41,4 @@ export class AnimauxComponent implements OnInit {
     })
   }
 
-  setPromo(){
-    // if (this.promotion=='off') {
-    //   this.promotion = 'on'
-    // }
-    // else if (this.promotion=='on') {
-    //   this.promotion='off'
-    // } 
-
-  }
 }

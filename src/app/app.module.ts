@@ -16,6 +16,8 @@ import { AjouterUserComponent } from './ajouter-user/ajouter-user.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UpdateAnimalComponent } from './update-animal/update-animal.component';
+import { AddQteComponent } from './add-qte/add-qte.component';
+import { WithDrawQteComponent } from './with-draw-qte/with-draw-qte.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { UpdateAnimalComponent } from './update-animal/update-animal.component';
     AjouterUserComponent,
     UpdateUserComponent,
     UpdateAnimalComponent,
+    AddQteComponent,
+    WithDrawQteComponent,
     
   ],
   imports: [
@@ -47,6 +51,8 @@ import { UpdateAnimalComponent } from './update-animal/update-animal.component';
       {path: 'ajouter-user', component: AjouterUserComponent},
       {path: 'modifier-user/:id', component: UpdateUserComponent},
       {path: 'modifier-animal/:id', component: UpdateAnimalComponent},
+      {path: 'add-qte/:id', component: AddQteComponent},
+      {path: 'remove-qte/:id', component: WithDrawQteComponent},
       {path: 'nouvelle-sortie', component: NouvelleSortieComponent},
 
       {path: '**', component: PageNotFoundComponent}

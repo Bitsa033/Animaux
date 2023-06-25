@@ -12,6 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateAnimalComponent implements OnInit {
 
   animal = new Animal
+  erreur:any
+  reussite:any
   id:any
 
   constructor(private service:UtilsService, private activated_route:ActivatedRoute){}
@@ -33,13 +35,20 @@ export class UpdateAnimalComponent implements OnInit {
 
     let  data = formulaire.value
     this.service.updateAnimal(this.id,data).subscribe((res:any)=>{
+      this.reussite=res.statut
+      setTimeout(() => {
+        this.reussite=""
+      }, 5000);
       console.log(res);
       
-      let id = res.data.animal.id
-      let name = res.data.animal.nom
-      alert("Mise à jour réussie pour l'animal n°"+id + " = " + name)
-      
-    })
+    },(err)=>{
+      this.erreur=err.error.message
+      setTimeout(() => {
+        this.erreur=""
+      }, 5000);
+      console.log(err);
+      }
+    )
 
   }
 }

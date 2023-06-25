@@ -1,18 +1,36 @@
 <div class="container">
     <div class="col-md-4 offset-3" >
-        <h1 class="container">Modifier Animal!</h1>
+        <br>
+        <!--s'affiche en cas de succès-->
+        <div *ngIf="reussite" class="alert alert-danger">
+            <i class="bi bi-check-circle-fill text-success"></i> {{reussite}}
+        </div>
+        <!--s'affiche en cas d'erreur-->
+        <div *ngIf="erreur" class="alert alert-danger">
+            <i class="bi bi-x-square-fill text-danger"></i> {{erreur}}
+        </div>
+        <h3 class="container">Modifier Animal!</h3>
         <form autocomplete="off" (ngSubmit)="UpdateAnimal(registerForm)" #registerForm="ngForm">
-            <br>
             <div class="form-group">
-                <input type="text" placeholder="Nom" class="form-control" name="nom" id="nom" [(ngModel)]="animal.nom">
+                Nom
+                <input type="text" placeholder="Nom ex: Chien" class="form-control" name="nom" id="nom" [(ngModel)]="animal.nom">
             </div>
             <br>
             <div class="form-group">
-                <input type="text" placeholder="Prix" class="form-control" name="prix" id="prix" [(ngModel)]="animal.prix">
+                Prix
+                <input type="text" placeholder="Prix ex:5500" class="form-control" name="prix" id="prix" [(ngModel)]="animal.prix">
             </div>
             <br>
             <div class="form-group">
-                <input type="text" placeholder="Qté" class="form-control" name="qte" id="qte" [(ngModel)]="animal.qte">
+                Qté
+                <input type="text" placeholder="Qté ex:22" class="form-control" name="qte" id="qte" [(ngModel)]="animal.qte">
+            </div>
+            <br>
+            <div class="form-group">
+                Promotion off
+                <input type="radio" name="promotion" value="off" id="promotion" [(ngModel)]="animal.promotion">
+                Promotion on
+                <input type="radio" name="promotion" value="on" id="promotion" [(ngModel)]="animal.promotion">
             </div>
             <br>
             
@@ -23,7 +41,12 @@
         </form>
     
     </div>
-    <!--/div-->
+    <!--/div 
+        <i class="bi bi-check-circle-fill"></i>
+        <i class="bi bi-exclamation-circle-fill"></i>
+        <i class="bi bi-eye-slash-fill"></i>
+        <i class="bi bi-eye-fill"></i>
+     -->
     
 </div>
 <!--/container-->
