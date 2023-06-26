@@ -1,29 +1,22 @@
 import { Component } from '@angular/core';
-import { Animal } from './animal';
+import { Produit } from './produit';
 import { UtilsService } from '../utils.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-ajouter-animal',
-  templateUrl: './ajouter-animal.component.html',
-  styleUrls: ['./ajouter-animal.component.css']
+  selector: 'app-ajouter-produit',
+  templateUrl: './ajouter-produit.component.html',
+  styleUrls: ['./ajouter-produit.component.css']
 })
-export class AjouterAnimalComponent {
+export class AjouterProduitComponent {
 
-  animal:Animal = new Animal()
+  produit = new Produit()
   erreur:any
   reussite:any
 
-  // data={
-  //   "nom":this.animal.nom,
-  //   "prix":this.animal.prix,
-  //   "qte":this.animal.qte,
-
-  // }
-
   constructor(private service:UtilsService){}
 
-  saveAnimal(formData:NgForm){
+  saveProduit(formData:NgForm){
     let data =formData.value
     this.service.storeAnimal(data).subscribe((res:any)=>{
       this.reussite=res.statut

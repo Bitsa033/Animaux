@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Animal } from '../ajouter-animal/animal';
+import { Produit } from '../ajouter-produit/produit';
 import { UtilsService } from '../utils.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-update-animal',
-  templateUrl: './update-animal.component.html',
-  styleUrls: ['./update-animal.component.css']
+  templateUrl: './update-produit.component.html',
+  styleUrls: ['./update-produit.component.css']
 })
-export class UpdateAnimalComponent implements OnInit {
+export class UpdateProduitComponent implements OnInit {
 
-  animal = new Animal
+  produit = new Produit()
   erreur:any
   reussite:any
   id:any
@@ -26,7 +26,7 @@ export class UpdateAnimalComponent implements OnInit {
 
   getAnimal(){
     this.service.getOneAnimal(this.id).subscribe((response:any)=>{
-    this.animal=response.data
+    this.produit=response.data
       
   })
   }

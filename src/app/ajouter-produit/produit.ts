@@ -1,4 +1,4 @@
-export class Animal{
+export class Produit{
     nom:any
     prix:any
     qte:any

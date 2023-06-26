@@ -1,32 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { Produit } from '../ajouter-produit/produit';
 import { UtilsService } from '../utils.service';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { Animal } from '../ajouter-animal/animal';
 
 @Component({
-  selector: 'app-add-qte',
-  templateUrl: './add-qte.component.html',
-  styleUrls: ['./add-qte.component.css']
+  selector: 'app-with-draw-qte',
+  templateUrl: './with-draw-qte.component.html',
+  styleUrls: ['./with-draw-qte.component.css']
 })
-export class AddQteComponent implements OnInit {
+export class WithDrawQteComponent implements OnInit {
+
   erreur:any
   reussite:any
   id:any
+  produit= new Produit()
 
-  animal=new Animal()
+  constructor(private service:UtilsService, private activated_route:ActivatedRoute) {}
 
-  constructor(private service:UtilsService,private activated_route:ActivatedRoute) {
-    
-  }
-  
   ngOnInit(): void {
-    this.id = this.activated_route.snapshot.paramMap.get("id")
+    this.id=this.activated_route.snapshot.paramMap.get('id')
   }
 
-  addQte(form:NgForm){
+  removeQte(form:NgForm){
     let  data = form.value
-    this.service.addQty(this.id,data).subscribe((res:any)=>{
+    this.service.removeQty(this.id,data).subscribe((res:any)=>{
       this.reussite=res.statut
       setTimeout(() => {
         this.reussite=""
@@ -43,5 +41,6 @@ export class AddQteComponent implements OnInit {
     )
 
   }
+  
 
 }
