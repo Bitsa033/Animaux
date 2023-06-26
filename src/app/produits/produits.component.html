@@ -72,13 +72,13 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                                 <li>
-                                    <a class="dropdown-item" routerLink="/add-qte/{{item.id}}"><i class="bi bi-pencil"></i> Nouvelle entrée</a>
+                                    <a class="dropdown-item" routerLink="/nouvelle-entree/{{item.id}}"><i class="bi bi-pencil"></i> Nouvelle entrée</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" routerLink="/remove-qte/{{item.id}}"><i class="bi bi-pencil"></i> Nouvelle sortie </a>
+                                    <a class="dropdown-item" routerLink="/nouvelle-sortie/{{item.id}}"><i class="bi bi-pencil"></i> Nouvelle sortie </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item"  routerLink="/modifier-animal/{{item.id}}"><i class="bi bi-pencil"></i> Mettre à jour </a>
+                                    <a class="dropdown-item"  routerLink="/modifier-produit/{{item.id}}"><i class="bi bi-pencil"></i> Mettre à jour </a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item text-danger del" (click)="deleteData(item.id)"><i class="bi bi-trash"> Supprimer</i></a>
