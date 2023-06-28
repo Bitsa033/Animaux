@@ -11,28 +11,28 @@ import { User } from './user';
 export class AjouterUserComponent {
 
   user:User = new User()
-
-  data={
-    "name":this.user.name,
-    "email":this.user.email,
-    "password":this.user.password
-  }
+  reussite:any
+  erreur:any
 
   constructor(private utils_service:UtilsService) {}
 
   saveUser(formData:NgForm){
-    this.data.name=formData.form.value.nom
-    this.data.email=formData.form.value.email
-    this.data.password=formData.form.value.password
-    console.log(this.data);
+    let data=formData.form.value
+    console.log(data);
     
-    this.utils_service.storeUser(this.data).subscribe((response:any)=>{
-  
-      console.log(response);
-      
-      alert("Utilisateur enregistré avec sucès !")
-      
-    })
+    this.utils_service.storeUser(data).subscribe((res:any)=>{
+      this.reussite=res.statut
+      setTimeout(() => {
+        this.reussite=""
+      }, 10000);
+      console.log(res);
+    },(err:any)=>{
+      this.erreur=err.error.message
+      setTimeout(() => {
+        this.erreur=""
+      }, 10000);
+      console.log(err);
+      })
     
   }
 

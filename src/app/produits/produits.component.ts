@@ -20,14 +20,14 @@ export class ProduitsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAnimalsData();
+    this.getProduits();
   }
   
-  getAnimalsData(){
-    this.service.getAllAnimals().subscribe((response:any)=>{
+  getProduits(){
+    this.service.getAllProducts().subscribe((response:any)=>{
       this.produits=response.data
     },(err)=>{
-      this.erreur=err.error.message
+      this.erreur=err.message
       setTimeout(() => {
         this.erreur=""
       }, 16000);
@@ -37,13 +37,13 @@ export class ProduitsComponent implements OnInit {
   }
 
   deleteData(id:any){
-    this.service.deleteAnimal(id).subscribe((res)=>{
+    this.service.deleteProduct(id).subscribe((res)=>{
       console.log(res);
       this.reussite="Donnée supprimée avec succès !"
       setTimeout(() => {
         this.reussite=""
       }, 10000);
-      this.getAnimalsData()
+      this.getProduits()
       
     })
   }

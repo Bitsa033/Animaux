@@ -12,7 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateUserComponent implements OnInit {
 
   user = new User()
-
+  reussite:any
+  erreur:any
   id:any
 
   ngOnInit(): void {
@@ -33,13 +34,18 @@ export class UpdateUserComponent implements OnInit {
   updateUser(form:NgForm){
    let  data = form.value
     this.service.updateUser(this.id,data).subscribe((res:any)=>{
+      this.reussite=res.statut
+      setTimeout(() => {
+        this.reussite=""
+      }, 10000);
       console.log(res);
-      
-      let id = res.data.user.id
-      let name = res.data.user.name
-      alert("Mise à jour réussie pour l'utisteur n°"+id + " = " + name)
-      
-    })
+    },(err:any)=>{
+      this.erreur=err.error.message
+      setTimeout(() => {
+        this.erreur=""
+      }, 10000);
+      console.log(err);
+      })
   }
 
 

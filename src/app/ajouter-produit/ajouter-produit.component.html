@@ -9,7 +9,7 @@
         <div *ngIf="erreur" class="alert alert-danger">
             <i class="bi bi-x-square-fill text-danger"></i> {{erreur}}
         </div>
-        <h3 class="container">Modifier Animal!</h3>
+        <h3 class="container">Ajouter Produit!</h3>
         <form autocomplete="off" (ngSubmit)="saveProduit(registerForm)" #registerForm="ngForm">
             <div class="form-group">
                 Nom
@@ -28,9 +28,9 @@
             <br>
             <div class="form-group">
                 Promotion off
-                <input type="radio" name="promotion" value="off" id="promotion" [(ngModel)]="produit.promotion">
+                <input type="radio" name="promotion" value="false" id="promotion" [(ngModel)]="produit.promotion">
                 Promotion on
-                <input type="radio" name="promotion" value="on" id="promotion" [(ngModel)]="produit.promotion">
+                <input type="radio" name="promotion" value="true" id="promotion" [(ngModel)]="produit.promotion">
             </div>
             <br>
             

@@ -20,32 +20,32 @@ export class UpdateProduitComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.activated_route.snapshot.paramMap.get("id")
-    this.getAnimal()
+    this.getProduct()
     
   }
 
-  getAnimal(){
-    this.service.getOneAnimal(this.id).subscribe((response:any)=>{
+  getProduct(){
+    this.service.getOneProduct(this.id).subscribe((response:any)=>{
     this.produit=response.data
       
   })
   }
 
-  UpdateAnimal(formulaire:NgForm){
+  UpdateProduct(formulaire:NgForm){
 
     let  data = formulaire.value
-    this.service.updateAnimal(this.id,data).subscribe((res:any)=>{
+    this.service.updatePrduct(this.id,data).subscribe((res:any)=>{
       this.reussite=res.statut
       setTimeout(() => {
         this.reussite=""
-      }, 5000);
+      }, 10000);
       console.log(res);
       
     },(err)=>{
       this.erreur=err.error.message
       setTimeout(() => {
         this.erreur=""
-      }, 5000);
+      }, 10000);
       console.log(err);
       }
     )

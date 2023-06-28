@@ -18,17 +18,17 @@ export class AjouterProduitComponent {
 
   saveProduit(formData:NgForm){
     let data =formData.value
-    this.service.storeAnimal(data).subscribe((res:any)=>{
+    this.service.storeProduct(data).subscribe((res:any)=>{
       this.reussite=res.statut
       setTimeout(() => {
         this.reussite=""
-      }, 5000);
+      }, 12000);
       console.log(res);
-    },(err)=>{
+    },(err:any)=>{
       this.erreur=err.error.message
       setTimeout(() => {
         this.erreur=""
-      }, 5000);
+      }, 12000);
       console.log(err);
       })
     

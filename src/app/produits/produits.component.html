@@ -11,7 +11,7 @@
     <div class="card-body">
         <br>
         <div class="d-flex">
-            <a routerLink="/ajouter-produit" class="btn btn-primary"> <i class="bi bi-align-middle"></i> Ajouter un Animal</a>
+            <a routerLink="/ajouter-produit" class="btn btn-primary"> <i class="bi bi-align-middle"></i> Ajouter un Produit</a>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Mot clé" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
@@ -59,8 +59,8 @@
                     </td>
                     <td >
                         <ul>
-                            <i *ngIf="item.promotion == 'off'" class="bi bi-heart"></i>
-                            <i *ngIf="item.promotion == 'on'" class="bi bi-heart-fill text-success"></i>
+                            <i *ngIf="item.promotion == 'false'" class="bi bi-heart"></i>
+                            <i *ngIf="item.promotion == 'true'" class="bi bi-heart-fill text-success"></i>
                         </ul>
                     </td>
                     <td>
