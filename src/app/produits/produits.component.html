@@ -35,7 +35,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngIf="produits <= 0">
+                <tr *ngIf="produits.length <= 0">
                     <td colspan="6" class="text-center">Votre Tableau est vide pour le moment ...</td>
                 </tr>
                 <tr *ngFor="let item of produits">
@@ -101,7 +101,11 @@
     </div>
     <!--/card-body-->
     <div class="card-footer">
-        <a href="" class="btn btn-primary">1</a>
+        <ul class="nav nav-pills">
+            <li *ngFor="let item of [].constructor(this.totalPage);let i=index">
+                <a (click)="goToPage(i)" [ngClass]="i==curentPage?'btn-info':'btn-outline-info'"  class="btn ms-1 mt-1">{{i}}</a>
+            </li>
+        </ul>
     </div>
 </div>
 <!--/container card-->
